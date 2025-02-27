@@ -200,7 +200,8 @@ if __name__ == "__main__":
         Q = 0
         delt = 4
         nt = int((60 * 60) / delt)
-        T_init = [100] + [0] * (nodes - 2) + [100]  # Example initial condition
+        # Example initial condition where the ends have temperature of 100C. The middle nodes have 0C.
+        T_init = [100] + [0] * (nodes - 2) + [100]   
     
         
         solver = FEMSolver_unsteady(nodes, length, k, alpha, hh, Tinf, Q, delt, nt, T_init)
